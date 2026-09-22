@@ -1,7 +1,7 @@
 {
   "name": "MinhaFrequência",
   "short_name": "MinhaFrequência",
-  "description": "Agenda acadêmica, histórico de frequência e progresso das disciplinas.",
+  "description": "Agenda acadêmica com histórico pesquisável de aulas, frequência e progresso das disciplinas.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
