@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="116" fill="#11182B"/>
-  <path d="M118 167 169 76l76 70M394 167 343 76l-76 70" fill="#8F72FF"/>
-  <ellipse cx="256" cy="240" rx="162" ry="151" fill="#8F72FF"/>
-  <ellipse cx="187" cy="224" rx="70" ry="76" fill="#F4F0FF"/>
-  <ellipse cx="325" cy="224" rx="70" ry="76" fill="#F4F0FF"/>
-  <circle cx="193" cy="229" r="31" fill="#0D1222"/>
-  <circle cx="319" cy="229" r="31" fill="#0D1222"/>
-  <circle cx="204" cy="217" r="9" fill="#fff"/>
-  <circle cx="330" cy="217" r="9" fill="#fff"/>
-  <path d="m256 257 34 5-34 37-34-37z" fill="#F2AE6A"/>
-  <path d="M119 354q68-53 137 0v95q-68-43-137 0z" fill="#263254"/>
-  <path d="M393 354q-68-53-137 0v95q68-43 137 0z" fill="#324267"/>
-  <path d="M256 358v90" stroke="#B9ABFF" stroke-width="11" stroke-linecap="round"/>
-  <rect x="342" y="326" width="84" height="67" rx="17" fill="#D6B08B"/>
-  <path d="M426 339q51 0 29 38-12 20-32 10" fill="none" stroke="#D6B08B" stroke-width="15" stroke-linecap="round"/>
-  <path d="M361 311c-15-24 13-34 2-57M394 311c-15-24 13-34 2-57" fill="none" stroke="#B4BDD3" stroke-width="9" stroke-linecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#24164A"/><stop offset="1" stop-color="#080F1E"/></linearGradient><linearGradient id="o" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#B79AFF"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs><rect width="512" height="512" rx="120" fill="url(#g)"/><rect x="24" y="24" width="464" height="464" rx="104" fill="none" stroke="#7C5BDE" stroke-width="10"/><path d="M116 178 158 91l82 67M396 178 354 91l-82 67" fill="#8B5CF6"/><ellipse cx="256" cy="266" rx="150" ry="145" fill="url(#o)"/><ellipse cx="188" cy="245" rx="66" ry="72" fill="#F8FAFF"/><ellipse cx="324" cy="245" rx="66" ry="72" fill="#F8FAFF"/><circle cx="199" cy="255" r="31" fill="#11182B"/><circle cx="313" cy="255" r="31" fill="#11182B"/><circle cx="210" cy="243" r="9" fill="#fff"/><circle cx="324" cy="243" r="9" fill="#fff"/><path d="m235 301 42 0-21 32z" fill="#F6B35F"/><path d="M156 364q50-36 100 0v71q-50-30-100 0z" fill="#18223A" stroke="#A78BFA" stroke-width="7"/><path d="M356 364q-50-36-100 0v71q50-30 100 0z" fill="#18223A" stroke="#7DD3FC" stroke-width="7"/><path d="M256 367v66" stroke="#CBD5E1" stroke-width="6"/></svg>
