@@ -1,4 +1,4 @@
-const CACHE='minhafrequencia-v0.7.0';
+const CACHE='minhafrequencia-v0.8.0';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 
 self.addEventListener('install',event=>{
