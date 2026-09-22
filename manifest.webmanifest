@@ -1,7 +1,7 @@
 {
   "name": "MinhaFrequência",
   "short_name": "MinhaFrequência",
-  "description": "Agenda acadêmica, andamento das disciplinas e controle pessoal de frequência.",
+  "description": "Agenda acadêmica, progresso das disciplinas e controle pessoal de frequência.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
