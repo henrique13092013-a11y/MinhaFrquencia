@@ -2,15 +2,15 @@
   "name": "MinhaFrequência",
   "short_name": "MinhaFrequência",
   "description": "Agenda acadêmica e controle pessoal de frequência.",
-  "start_url": "./?v=0.7",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#090D1A",
-  "theme_color": "#090D1A",
+  "background_color": "#080F1E",
+  "theme_color": "#080F1E",
   "lang": "pt-BR",
   "icons": [
     {
-      "src": "icon.svg?v=0.7",
+      "src": "icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
