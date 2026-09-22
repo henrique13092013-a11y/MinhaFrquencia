@@ -1,12 +1,12 @@
 {
   "name": "MinhaFrequência",
   "short_name": "MinhaFrequência",
-  "description": "Agenda acadêmica e controle pessoal de frequência para iPhone.",
+  "description": "Agenda acadêmica e controle pessoal de frequência, com temas claro e escuro.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b0f1e",
-  "theme_color": "#0b0f1e",
+  "background_color": "#090d1a",
+  "theme_color": "#090d1a",
   "lang": "pt-BR",
   "icons": [
     {
