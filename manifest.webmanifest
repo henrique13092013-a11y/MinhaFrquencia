@@ -1,12 +1,12 @@
 {
   "name": "MinhaFrequência",
   "short_name": "MinhaFrequência",
-  "description": "Agenda acadêmica e controle pessoal de frequência.",
+  "description": "Agenda acadêmica, andamento das disciplinas e controle pessoal de frequência.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#214E67",
-  "theme_color": "#214E67",
+  "background_color": "#2B5870",
+  "theme_color": "#2B5870",
   "lang": "pt-BR",
   "icons": [
     {
