@@ -54,468 +54,129 @@ html[data-theme="dark"]{--bg:#121827;--surface:#1A2233;--surface2:#232D42;--surf
 @media(max-width:390px){.history-core-grid{grid-template-columns:1fr 1fr}.history-commitments,.history-reason{margin-left:40px}}
 @media(max-width:350px){.history-core-grid,.history-custom-range{grid-template-columns:1fr}.history-commitments,.history-reason{margin-left:0}.history-active-row{display:block}.history-clear{margin-top:5px}}
 
-/* v1.4.1 — selected states do onboarding */
-.term,.semopt{position:relative;overflow:hidden;transition:background .16s var(--ease),border-color .16s var(--ease),color .16s var(--ease),transform .12s var(--ease),box-shadow .16s var(--ease)}
-.term:active,.semopt:active{transform:scale(.98)}
-.term.selected,.semopt.selected{background:var(--cobalt)!important;border:2px solid color-mix(in srgb,var(--cobalt) 72%,white)!important;color:#fff!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--pool) 28%,transparent),0 8px 18px color-mix(in srgb,var(--cobalt) 18%,transparent)!important;font-weight:820!important}
-.term.selected::after,.semopt.selected::after{content:"";position:absolute;right:7px;top:7px;width:18px;height:18px;border-radius:50%;display:block;background:var(--yellow);box-shadow:inset 0 0 0 1px color-mix(in srgb,#17384D 12%,transparent)}.term.selected::before,.semopt.selected::before{content:"";position:absolute;right:12px;top:11px;width:5px;height:8px;border-right:2px solid #17384D;border-bottom:2px solid #17384D;transform:rotate(45deg);z-index:2}
-.term.selected{padding-right:22px}.semopt.selected{padding-right:30px}
-.year-input-wrap{position:relative}.year-input-wrap input{padding-right:48px!important;border:2px solid var(--cobalt)!important;background:color-mix(in srgb,var(--cobalt) 9%,var(--field))!important;font-weight:780;color:var(--text)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--pool) 16%,transparent)}
-.year-input-wrap .selected-check{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:#17384D;font-size:13px;font-weight:950;pointer-events:none}
-.selection-hint{display:block;margin-top:6px;color:var(--cobalt);font-size:11px;font-weight:720}
-html[data-theme="dark"] .term.selected,html[data-theme="dark"] .semopt.selected{background:#2878D6!important;border-color:#B7D1FF!important;color:#fff!important}
-html[data-theme="dark"] .year-input-wrap input{background:#3F7189!important;border-color:#9AC0FF!important;color:#FFF7E8!important}
+/* v1.7 — Gate 6: design system integrado */
+:root{
+  --ds-space-1:4px;
+  --ds-space-2:6px;
+  --ds-space-3:8px;
+  --ds-space-4:12px;
+  --ds-space-5:16px;
+  --ds-space-6:20px;
+  --ds-space-7:24px;
+  --ds-space-8:32px;
+  --ds-radius-xs:6px;
+  --ds-radius-sm:8px;
+  --ds-radius-md:10px;
+  --ds-radius-lg:12px;
+  --ds-radius-xl:16px;
+  --ds-radius-sheet:20px;
+  --ds-chip:36px;
+  --ds-touch:44px;
+  --ds-control:48px;
+  --ds-action:56px;
+  --ds-icon-stroke:1.75;
+  --ds-status-positive:var(--green);
+  --ds-status-partial:var(--lavender);
+  --ds-status-negative:var(--coral);
+  --ds-status-neutral:var(--yellow);
+  --ds-status-remote:var(--pool);
+  --ds-status-info:var(--cobalt);
+}
 
-/* v1.4.2 — calendário mais legível + modalidade EaD */
-.month-day{min-height:60px}.month-main{top:18px;display:flex;justify-content:center;align-items:center}.calendar-mark{width:22px;height:22px;border-radius:7px;display:inline-grid;place-items:center;font-size:15px;font-weight:900;line-height:1;border:1px solid transparent;box-shadow:0 1px 0 color-mix(in srgb,var(--text) 8%,transparent)}.calendar-mark svg{width:13px!important;height:13px!important;fill:none!important;stroke:currentColor!important;stroke-width:2!important}.calendar-present{background:color-mix(in srgb,var(--green) 24%,var(--surface));border-color:color-mix(in srgb,var(--green) 68%,var(--line));color:var(--green)}.calendar-partial{background:color-mix(in srgb,var(--lavender) 25%,var(--surface));border-color:color-mix(in srgb,var(--lavender) 68%,var(--line));color:var(--lavender)}.calendar-absent{background:color-mix(in srgb,var(--coral) 24%,var(--surface));border-color:color-mix(in srgb,var(--coral) 72%,var(--line));color:var(--coral)}.calendar-noclass{background:color-mix(in srgb,var(--yellow) 28%,var(--surface));border-color:color-mix(in srgb,var(--yellow) 72%,var(--line));color:color-mix(in srgb,var(--yellow) 74%,var(--text))}.calendar-other{background:color-mix(in srgb,var(--cobalt) 18%,var(--surface));border-color:color-mix(in srgb,var(--cobalt) 58%,var(--line));color:var(--cobalt)}.calendar-external{background:color-mix(in srgb,var(--pool) 20%,var(--surface));border-color:color-mix(in srgb,var(--pool) 62%,var(--line));color:var(--pool)}.calendar-ead{background:color-mix(in srgb,var(--cobalt) 23%,var(--surface));border-color:color-mix(in srgb,var(--pool) 70%,var(--line));color:var(--pool)}.calendar-legend .calendar-mark{width:19px;height:19px;border-radius:6px;font-size:13px;box-shadow:none;flex:0 0 auto}.calendar-legend .calendar-mark svg{width:12px!important;height:12px!important}.month-mini-icons .calendar-mark{width:12px;height:12px;border-radius:4px;font-size:9px;border-width:1px}.month-mini-icons .calendar-mark svg{width:8px!important;height:8px!important}.ead-action{color:var(--pool);border-color:color-mix(in srgb,var(--pool) 48%,var(--line-strong));background:color-mix(in srgb,var(--pool) 10%,var(--surface2))}html[data-theme="dark"] .calendar-present{color:#BDE8C7}html[data-theme="dark"] .calendar-partial{color:#E0D7FF}html[data-theme="dark"] .calendar-absent{color:#FFD0C7}html[data-theme="dark"] .calendar-noclass{color:#FFF0A8}html[data-theme="dark"] .calendar-ead,html[data-theme="dark"] .calendar-external{color:#C6F5F8}
-
-/* v1.4.3 — dark mode profundo: azul, lavanda e verde */
-html[data-theme="dark"] body{background:
-  radial-gradient(circle at 15% 0%,rgba(130,169,255,.08),transparent 30%),
-  radial-gradient(circle at 92% 12%,rgba(183,167,240,.07),transparent 28%),
-  var(--bg)}
+/* Dark mode: approved depth and restrained chromatic atmosphere */
+html[data-theme="dark"] body{
+  background:
+    radial-gradient(circle at 15% 0%,rgba(130,169,255,.08),transparent 30%),
+    radial-gradient(circle at 92% 12%,rgba(183,167,240,.07),transparent 28%),
+    var(--bg);
+}
 html[data-theme="dark"] .topbar,
-html[data-theme="dark"] .bottomnav{background:color-mix(in srgb,var(--bg) 92%,transparent)}
-html[data-theme="dark"] .card,
-html[data-theme="dark"] .settings-card,
-html[data-theme="dark"] .status-box,
-html[data-theme="dark"] .history-controls{box-shadow:0 10px 28px rgba(3,7,18,.18)}
-html[data-theme="dark"] .mode-toggle button.active,
-html[data-theme="dark"] .theme-options button.active{background:color-mix(in srgb,var(--lavender) 13%,var(--surface));border-color:color-mix(in srgb,var(--lavender) 55%,var(--line));color:var(--text)}
-html[data-theme="dark"] .navbtn.active{color:var(--lavender)}
-html[data-theme="dark"] .hero .eyebrow,
-html[data-theme="dark"] .next-kicker,
-html[data-theme="dark"] .section-title button{color:var(--pool)}
-html[data-theme="dark"] .risk-strip{background:color-mix(in srgb,var(--surface2) 92%,var(--lavender) 8%)}
-html[data-theme="dark"] .history-chip{background:color-mix(in srgb,var(--lavender) 12%,var(--surface2));border-color:color-mix(in srgb,var(--lavender) 42%,var(--line))}
+html[data-theme="dark"] .bottomnav{
+  background:color-mix(in srgb,var(--bg) 93%,transparent);
+}
 
-/* v1.5 — UI consistency pass */
-:root{--control-sm:44px;--control-md:48px;--control-lg:52px}
-
-/* Base interaction grammar: true buttons are optically centered. */
+/* Base interaction language */
 button{
   -webkit-appearance:none;
   appearance:none;
   min-width:0;
   vertical-align:middle;
-  line-height:1.2;
-  text-align:center;
 }
 button>svg{display:block;flex:0 0 auto}
-
-/* Standard centered controls */
-.section-title button,
-.room-pill,
-.iconbtn,
-.mode-toggle button,
-.activity-done,
-.sim-btn,
-.settings-card button,
-.theme-options button,
-.tinybtn,
-.close,
-.primary,
-.secondary,
-.onboard-actions button,
-.term,
-.semopt,
-.detail-edit-btn,
-.subject-quick-actions button,
-.history-actions button,
-.history-clear,
-.picker-day,
-.file-pick-btn,
-.file-remove,
-.pending-all{
+.primary,.secondary,.sim-btn,.tinybtn,.detail-edit-btn,
+.subject-quick-actions button,.settings-card>button,
+.timeline-content button,.file-pick-btn,.file-remove,
+.pending-all,.history-clear,.history-edit,.history-quick,
+.theme-options button,.onboard-actions button{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+  line-height:1.2;
+}
+.primary,.secondary,.sim-btn,.settings-card>button,.onboard-actions button{
+  min-height:var(--ds-control);
+  border-radius:var(--ds-radius-md);
+}
+.tinybtn,.detail-edit-btn,.subject-quick-actions button,.theme-options button,
+.pending-all,.history-clear,.history-edit,.history-quick,.timeline-content button{
+  min-height:var(--ds-touch);
+  border-radius:var(--ds-radius-md);
+}
+.btnrow{align-items:stretch}
+.btnrow>.primary,.btnrow>.secondary{flex:1;align-self:stretch}
+.settings-card>button{padding:0 14px}
+.settings-card>button+button{margin-left:6px}
+.section-title button{
+  min-height:var(--ds-touch);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 4px;
+  line-height:1.15;
 }
 
-.iconbtn,.activity-done,.close,.fab{
-  display:grid;
-  place-items:center;
-  padding:0;
-}
-.iconbtn,.activity-done,.close{width:var(--control-sm);height:var(--control-sm);min-height:var(--control-sm)}
-.room-pill,.detail-edit-btn,.subject-quick-actions button,.theme-options button,.tinybtn,.pending-all{min-height:var(--control-sm)}
-.primary,.secondary,.sim-btn,.settings-card button,.onboard-actions button{min-height:var(--control-md)}
-.mode-toggle button{min-height:var(--control-sm)}
-.history-actions button{min-height:var(--control-sm);width:100%}
-.btnrow>.primary,.btnrow>.secondary{flex:1;justify-content:center}
-.freq-actions .secondary,.freq-actions .sim-btn{width:100%;height:var(--control-md)}
-.subject-quick-actions button{padding:0 12px;line-height:1.25}
-.settings-card button{line-height:1.25}
-.onboard-actions{align-items:stretch}
-.onboard-actions button{align-self:stretch}
-.onboard-back{min-width:96px}
-.term,.semopt{align-items:center;justify-content:center;text-align:center}
-.history-chip{justify-content:center;text-align:center}
-.history-clear{align-self:center}
-
-/* Controls whose content is intentionally editorial / left aligned. */
-.quick,
-.history-launch,
-.pending-row,
-.risk-strip,
-.subject-title-link,
-.subject-progress-card,
-.freq-link,
-.room-node,
-.date-button,
-.history-advanced-toggle,
-.reason,
-.micro{
+/* Editorial controls stay intentionally left aligned */
+.quick,.pending-row,.history-launch,.risk-strip,.subject-progress-card,
+.freq-link,.subject-title-link,.room-node,.date-button,.reason,.micro{
   text-align:left;
 }
-.quick{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start}
-.subject-title-link,.freq-link,.date-button{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
-.date-button{justify-content:center}
-.micro{justify-content:flex-start}
-.reason{justify-content:flex-start}
-.history-advanced-toggle{justify-content:initial}
-.month-day{display:block;text-align:left}
-.daymini{display:block;text-align:center}
+.quick{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+}
+.reason,.micro{align-items:center}
 
-/* Icon/text optical alignment */
+/* Icon-only controls */
+.iconbtn,.close,.activity-done,.fab{
+  display:grid;
+  place-items:center;
+  padding:0;
+  line-height:0;
+}
+.iconbtn,.close,.activity-done{
+  width:var(--ds-touch);
+  height:var(--ds-touch);
+  min-width:var(--ds-touch);
+  min-height:var(--ds-touch);
+  border-radius:var(--ds-radius-md);
+}
+.iconbtn svg,.close svg{width:20px;height:20px}
+.activity-done svg{width:18px;height:18px}
 .back-btn{
+  min-height:var(--ds-touch);
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:var(--control-sm);
-  line-height:1.2;
+  gap:6px;
   text-align:center;
+  line-height:1.1;
 }
-.back-btn svg{margin-top:-1px}
-.qicon,.subject-mark,.subject-mini,.history-launch-icon,.activity-icon,.room-code{
-  flex:0 0 auto;
-}
-.option{line-height:1.2;text-align:center}
-.option span,.big-action span,.navbtn{line-height:1.2}
-.history-more{display:grid!important;place-items:center!important;padding:0!important}
-.file-pick-btn{justify-content:center!important}
-
-/* Equal rows, predictable spacing and no accidental baseline drift. */
-.theme-options{align-items:stretch}
-.theme-options button{width:100%;height:var(--control-sm)}
-.subject-quick-actions{align-items:stretch}
-.history-actions{align-items:stretch}
-.history-actions button{align-self:stretch}
-.freq-actions{align-items:stretch}
-.settings-card button+button{vertical-align:top}
-.section-title button{line-height:1.15}
-
-/* Functional secondary text: keep readable on small iPhones. */
-.history-status,
-.history-summary-card span,
-.history-results-head span,
-.history-commitments,
-.history-reason,
-.freq-mini span,
-.course-progress-line,
-.next-act,
-.settings-list small,
-.file-status small,
-.program-stats span{
-  font-size:11px;
-  line-height:1.35;
-}
-
-/* Subject colors are softened only in dark mode; stored colors are untouched. */
-html[data-theme="dark"] .subject-mark,
-html[data-theme="dark"] .subject-mini{
-  background:color-mix(in srgb,var(--subject) 78%,var(--surface3) 22%);
-}
-html[data-theme="dark"] .next-class-card{border-left-color:color-mix(in srgb,var(--subject) 78%,var(--lavender) 22%)}
-html[data-theme="dark"] .today-card{border-left-color:color-mix(in srgb,var(--subject) 78%,var(--lavender) 22%)}
-html[data-theme="dark"] .event-card{border-left-color:color-mix(in srgb,var(--subject,#2878D6) 78%,var(--lavender) 22%)}
-html[data-theme="dark"] .subject-hero{border-top-color:color-mix(in srgb,var(--subject) 78%,var(--lavender) 22%)}
-html[data-theme="dark"] .history-row:not(.missing){border-left-color:color-mix(in srgb,var(--subject) 78%,var(--lavender) 22%)}
-html[data-theme="dark"] .course-progress i{
-  background:color-mix(in srgb,var(--subject) 80%,var(--lavender) 20%);
-}
-html[data-theme="dark"] .activity-icon{
-  background:color-mix(in srgb,var(--subject) 15%,var(--surface2));
-}
-
-/* Small-screen consistency */
-@media(max-width:390px){
-  .section-title{align-items:center}
-  .section-title button{min-height:var(--control-sm)}
-  .subject-quick-actions button{min-height:var(--control-sm)}
-}
-@media(max-width:350px){
-  .onboard-actions{display:grid;grid-template-columns:auto minmax(0,1fr)}
-  .onboard-actions button{width:100%}
-  .btnrow{align-items:stretch}
-  .btnrow>.primary,.btnrow>.secondary{min-width:0}
-}
-
-/* v1.5.1 — icon system / optical alignment */
-:root{
-  --icon-xs:12px;
-  --icon-sm:16px;
-  --icon-md:20px;
-  --icon-lg:24px;
-  --icon-slot-sm:20px;
-  --icon-slot-md:24px;
-  --icon-slot-lg:40px;
-}
-.icon-glyph,
-.ui-icon,
-.option-icon,
-.action-icon,
-.micro-icon,
-.calendar-status-icon,
-.button-icon,
-.chevron-icon,
-.history-more-icon,
-.chip-x-icon,
-.activity-done-icon{
-  display:block;
-  flex:0 0 auto;
-  width:var(--icon-md);
-  height:var(--icon-md);
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-/* Square icon buttons: no font-baseline dependence. */
-.iconbtn,.close,.activity-done,.fab{
-  line-height:0!important;
-}
-.iconbtn .icon-glyph,.close .icon-glyph{width:20px;height:20px}
-.activity-done .activity-done-icon{width:19px;height:19px}
-.fab svg{width:24px;height:24px}
-
-/* Bottom navigation */
-.navbtn span{
-  width:24px;
-  height:24px;
-  display:grid;
-  place-items:center;
-  flex:0 0 24px;
-}
-.navbtn svg{width:19px;height:19px;margin:0}
-
-/* Calendar legend: every icon has exactly the same optical slot. */
-.calendar-legend span{
-  min-height:32px;
-  align-items:center;
-}
-.calendar-legend span>b{
-  width:20px;
-  height:20px;
-  min-width:20px;
-  display:grid;
-  place-items:center;
-  margin:0;
-  padding:0;
-  line-height:1;
-  flex:0 0 20px;
-}
-.calendar-legend .calendar-mark{
-  width:20px;
-  height:20px;
-  min-width:20px;
-  border-radius:6px;
-  font-size:13px;
-}
-.calendar-legend .calendar-mark svg{width:12px!important;height:12px!important}
-.calendar-legend .legend-emoji{
-  width:20px;
-  height:20px;
-  display:grid;
-  place-items:center;
-  font-size:13px;
-  line-height:1;
-  vertical-align:middle;
-}
-
-/* Content emojis stay, but live in predictable squares. */
-.event-emoji{
-  width:18px;
-  height:18px;
-  min-width:18px;
-  display:inline-grid;
-  place-items:center;
-  line-height:1;
-  vertical-align:middle;
-  margin:0;
-}
-.activity-icon .event-emoji{width:22px;height:22px;font-size:18px}
-.event-card .event-emoji{width:18px;height:18px;font-size:14px}
-.subject-upcoming-row .event-emoji{width:20px;height:20px;font-size:17px}
-.tag .event-emoji{width:17px;height:17px;font-size:13px}
-.special-day .event-emoji{width:19px;height:19px;font-size:15px}
-.month-main .event-emoji{
-  width:22px;
-  height:22px;
-  min-width:22px;
-  font-size:15px;
-}
-.month-mini-icons .event-emoji{
-  width:12px;
-  height:12px;
-  min-width:12px;
-  font-size:9px;
-}
-
-/* Calendar status glyphs and mini markers */
-.month-main .calendar-mark{width:22px;height:22px}
-.month-mini-icons{align-items:center}
-.month-mini-icons>span{
-  width:12px;
-  height:12px;
-  display:grid;
-  place-items:center;
-}
-.month-mini-icons .calendar-mark{width:12px;height:12px;min-width:12px}
-.month-main,.month-mini-icons{line-height:0}
-
-/* Attendance and modal options */
-.option>b{
-  width:24px;
-  height:24px;
-  min-width:24px;
-  display:grid;
-  place-items:center;
-  line-height:0;
-  margin:0;
-}
-.option-icon{width:21px;height:21px;margin:0}
-.option .half-glyph{
-  width:24px;
-  height:24px;
-  display:grid;
-  place-items:center;
-  font-size:20px;
-  line-height:1;
-  transform:translateY(-.5px);
-}
-.big-action>b{
-  width:22px;
-  height:22px;
-  min-width:22px;
-  display:grid;
-  place-items:center;
-  line-height:0;
-}
-.big-action .action-icon{width:19px;height:19px;margin:0}
-.big-action .half-glyph{
-  width:22px;
-  height:22px;
-  display:grid;
-  place-items:center;
-  line-height:1;
-  transform:translateY(-.5px);
-}
-.reason-icon{width:18px;height:18px;min-width:18px;margin:0}
-.micro-icon{width:18px;height:18px;min-width:18px;margin:0}
-
-/* Quick actions and fixed content-emoji slots */
-.qicon{width:40px;height:40px;display:grid;place-items:center}
-.qicon svg{width:20px;height:20px;margin:0}
-.button-icon{width:17px;height:17px}
-.button-emoji{
-  width:18px;
-  height:18px;
-  min-width:18px;
-  display:inline-grid;
-  place-items:center;
-  font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif;
-  font-size:14px;
-  line-height:1;
-}
-.subject-quick-actions button{gap:6px}
-
-/* Chevrons / disclosure / overflow */
-.history-launch-arrow,
-.risk-chevron,
-.subject-chevron{
-  width:22px;
-  height:22px;
-  display:grid;
-  place-items:center;
-  line-height:0;
-}
-.history-launch-arrow .icon-glyph,
-.risk-chevron .chevron-icon,
-.subject-chevron .chevron-icon{width:18px;height:18px}
-.history-more{line-height:0!important}
-.history-more .history-more-icon{width:20px;height:20px}
-.history-chip b{
-  width:16px;
-  height:16px;
-  min-width:16px;
-  display:grid;
-  place-items:center;
-  line-height:0;
-}
-.history-chip .chip-x-icon{width:13px;height:13px}
-
-/* Back buttons and inline icons */
 .back-btn svg{width:18px;height:18px;margin:0}
-.back-btn{gap:6px}
-.with-icon svg{margin:0}
 
-/* Selection checks */
-.selected-check{
-  display:grid!important;
-  place-items:center!important;
-  line-height:1!important;
-}
-.term.selected::after,.semopt.selected::after{
-  display:grid;
-  place-items:center;
-  line-height:1;
-}
-
-/* Prevent emoji/font metrics from moving labels vertically. */
-.calendar-legend span,
-.subject-quick-actions button,
-.micro,
-.reason,
-.event-card h3,
-.special-day strong,
-.tag{
-  align-items:center;
-}
-
-/* v1.6 — global visual consistency audit */
-:root{
-  --control-xs:36px;
-  --control-sm:44px;
-  --control-md:48px;
-  --icon-xxs:12px;
-  --icon-xs:14px;
-  --icon-sm:16px;
-  --icon-md:20px;
-  --icon-lg:24px;
-  --icon-stroke:1.8;
-}
-
-/* Shared vector geometry */
-.legend-icon svg,
-.history-launch-icon svg,
-.selected-check svg,
-.history-quick-icon,
-.calendar-mark-icon{
-  display:block;
-  width:100%;
-  height:100%;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:var(--icon-stroke);
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-
-/* True centered calendar headers */
+/* Calendar header and segmented control */
 #view-calendar>.calendar-header,
 .calendar-picker>.calendar-header{
   display:grid;
@@ -531,118 +192,142 @@ html[data-theme="dark"] .activity-icon{
 }
 #view-calendar>.calendar-header .iconbtn,
 .calendar-picker>.calendar-header .iconbtn{justify-self:center}
-
-/* Segmented controls */
 .mode-toggle{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:4px;
   align-items:stretch;
+  padding:4px;
+  border-radius:var(--ds-radius-md);
+  background:var(--surface2);
 }
 .mode-toggle button{
   width:100%;
-  height:44px;
-  min-height:44px;
-  padding:0 12px;
+  min-height:var(--ds-touch);
   display:grid;
   place-items:center;
+  padding:0 12px;
+  border-radius:var(--ds-radius-sm);
   line-height:1;
 }
+.mode-toggle button.active{
+  background:color-mix(in srgb,var(--lavender) 13%,var(--surface));
+  border-color:color-mix(in srgb,var(--lavender) 58%,var(--line));
+  color:var(--text);
+}
 
-/* Calendar legend: same chip, slot, baseline and icon weight */
+/* Gate 3 — approved calendar legend */
 .calendar-legend{
   display:flex;
   align-items:center;
   gap:6px;
   overflow-x:auto;
   overflow-y:hidden;
-  padding:2px 0 10px;
+  padding:2px 1px 10px;
   margin:0 0 4px;
   scrollbar-width:none;
   scroll-snap-type:x proximity;
 }
 .calendar-legend::-webkit-scrollbar{display:none}
 .calendar-legend .legend-chip{
-  height:36px;
-  min-height:36px;
-  padding:0 9px 0 6px;
+  height:var(--ds-chip);
+  min-height:var(--ds-chip);
+  padding:0 10px 0 6px;
   gap:6px;
   display:inline-flex;
   align-items:center;
   justify-content:flex-start;
   flex:0 0 auto;
   white-space:nowrap;
-  border-radius:9px;
+  border-radius:var(--ds-radius-sm);
   background:var(--surface2);
   border:1px solid var(--line);
   color:var(--muted);
-  font-size:10px;
-  font-weight:690;
-  line-height:1;
+  font-size:11px;
+  font-weight:650;
+  line-height:14px;
   scroll-snap-align:start;
 }
 .calendar-legend .legend-icon{
-  width:22px;
-  height:22px;
-  min-width:22px;
-  padding:4px;
-  border-radius:7px;
+  width:20px;
+  height:20px;
+  min-width:20px;
+  padding:3px;
+  border-radius:6px;
   display:grid;
   place-items:center;
   line-height:0;
   border:1px solid var(--line-strong);
   background:var(--surface3);
 }
-.calendar-legend .legend-icon svg{width:14px;height:14px}
+.calendar-legend .legend-icon svg{
+  display:block;
+  width:14px;
+  height:14px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:var(--ds-icon-stroke);
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
 .calendar-legend .legend-label{
   display:block;
   line-height:14px;
   transform:translateY(.25px);
 }
-.legend-present .legend-icon{color:var(--green);background:color-mix(in srgb,var(--green) 16%,var(--surface3));border-color:color-mix(in srgb,var(--green) 55%,var(--line))}
-.legend-partial .legend-icon{color:var(--lavender);background:color-mix(in srgb,var(--lavender) 16%,var(--surface3));border-color:color-mix(in srgb,var(--lavender) 55%,var(--line))}
-.legend-absent .legend-icon{color:var(--coral);background:color-mix(in srgb,var(--coral) 16%,var(--surface3));border-color:color-mix(in srgb,var(--coral) 55%,var(--line))}
-.legend-noclass .legend-icon{color:var(--yellow);background:color-mix(in srgb,var(--yellow) 16%,var(--surface3));border-color:color-mix(in srgb,var(--yellow) 55%,var(--line))}
-.legend-ead .legend-icon{color:var(--pool);background:color-mix(in srgb,var(--pool) 16%,var(--surface3));border-color:color-mix(in srgb,var(--pool) 55%,var(--line))}
-.legend-exam .legend-icon{color:var(--coral);background:color-mix(in srgb,var(--coral) 13%,var(--surface3))}
-.legend-seminar .legend-icon{color:var(--lavender);background:color-mix(in srgb,var(--lavender) 13%,var(--surface3))}
-.legend-delivery .legend-icon{color:var(--pool);background:color-mix(in srgb,var(--pool) 13%,var(--surface3))}
-.legend-institutional .legend-icon{color:var(--cobalt);background:color-mix(in srgb,var(--cobalt) 13%,var(--surface3))}
+.legend-present .legend-icon{color:var(--ds-status-positive);background:color-mix(in srgb,var(--green) 15%,var(--surface3));border-color:color-mix(in srgb,var(--green) 52%,var(--line))}
+.legend-partial .legend-icon{color:var(--ds-status-partial);background:color-mix(in srgb,var(--lavender) 15%,var(--surface3));border-color:color-mix(in srgb,var(--lavender) 52%,var(--line))}
+.legend-absent .legend-icon{color:var(--ds-status-negative);background:color-mix(in srgb,var(--coral) 15%,var(--surface3));border-color:color-mix(in srgb,var(--coral) 52%,var(--line))}
+.legend-noclass .legend-icon{color:var(--ds-status-neutral);background:color-mix(in srgb,var(--yellow) 15%,var(--surface3));border-color:color-mix(in srgb,var(--yellow) 52%,var(--line))}
+.legend-ead .legend-icon{color:var(--ds-status-remote);background:color-mix(in srgb,var(--pool) 15%,var(--surface3));border-color:color-mix(in srgb,var(--pool) 52%,var(--line))}
+.legend-exam .legend-icon{color:var(--coral)}
+.legend-seminar .legend-icon,.legend-activity .legend-icon{color:var(--lavender)}
+.legend-delivery .legend-icon{color:var(--pool)}
+.legend-institutional .legend-icon{color:var(--cobalt)}
+.legend-holiday .legend-icon{color:var(--pink)}
 
-/* Calendar date markers */
+/* Calendar status markers use the same semantic geometry */
 .calendar-mark{
   width:22px;
   height:22px;
   min-width:22px;
   padding:4px;
+  border-radius:7px;
   display:grid;
   place-items:center;
   line-height:0;
+  border:1px solid transparent;
 }
-.calendar-mark .calendar-mark-icon{width:14px;height:14px}
-.month-main{
-  height:22px;
-  display:grid;
-  place-items:center;
-  line-height:0;
+.calendar-mark svg,.calendar-mark-icon{
+  width:14px;
+  height:14px;
+  display:block;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:var(--ds-icon-stroke);
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
+.calendar-present{color:var(--green);background:color-mix(in srgb,var(--green) 16%,var(--surface2));border-color:color-mix(in srgb,var(--green) 55%,var(--line))}
+.calendar-partial{color:var(--lavender);background:color-mix(in srgb,var(--lavender) 16%,var(--surface2));border-color:color-mix(in srgb,var(--lavender) 55%,var(--line))}
+.calendar-absent{color:var(--coral);background:color-mix(in srgb,var(--coral) 16%,var(--surface2));border-color:color-mix(in srgb,var(--coral) 55%,var(--line))}
+.calendar-noclass{color:var(--yellow);background:color-mix(in srgb,var(--yellow) 16%,var(--surface2));border-color:color-mix(in srgb,var(--yellow) 55%,var(--line))}
+.calendar-ead,.calendar-external{color:var(--pool);background:color-mix(in srgb,var(--pool) 16%,var(--surface2));border-color:color-mix(in srgb,var(--pool) 55%,var(--line))}
+.calendar-other{color:var(--cobalt);background:color-mix(in srgb,var(--cobalt) 14%,var(--surface2));border-color:color-mix(in srgb,var(--cobalt) 50%,var(--line))}
+.month-main{display:grid;place-items:center;line-height:0}
 .month-main>.event-emoji{
   width:22px;
   height:22px;
   min-width:22px;
-  border-radius:7px;
   display:grid;
   place-items:center;
+  border-radius:7px;
+  line-height:1;
+  font-size:14px;
   background:var(--surface2);
   border:1px solid var(--line);
-  font-size:14px;
-  line-height:1;
 }
-.month-mini-icons{
-  height:12px;
-  align-items:center;
-  line-height:0;
-}
+.month-mini-icons{align-items:center;line-height:0}
 .month-mini-icons>span{
   width:12px;
   height:12px;
@@ -659,68 +344,9 @@ html[data-theme="dark"] .activity-icon{
   border-radius:4px;
   font-size:8px;
 }
-.month-mini-icons .calendar-mark-icon{width:8px;height:8px}
+.month-mini-icons .calendar-mark svg{width:8px;height:8px}
 
-/* History / attendance icon slots */
-.history-launch-icon{
-  width:40px;
-  height:40px;
-  padding:10px;
-  display:grid;
-  place-items:center;
-  line-height:0;
-}
-.history-launch-icon svg{width:20px;height:20px}
-.history-actions .history-quick{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-  line-height:1;
-}
-.history-quick-icon{width:16px;height:16px}
-.option>b,.big-action>b{
-  display:grid;
-  place-items:center;
-  line-height:0;
-  margin:0;
-}
-.status-half-icon{width:21px;height:21px}
-.selected-check{
-  padding:5px;
-  line-height:0!important;
-}
-.selected-check svg{width:14px;height:14px}
-
-/* Action buttons */
-.primary,.secondary,.sim-btn,.tinybtn,.detail-edit-btn,
-.subject-quick-actions button,.settings-card>button,
-.catalog-item button,.onboard-custom-item button,
-.timeline-content button,.file-pick-btn,.file-remove,
-.pending-all,.history-clear,.history-edit,.history-quick,
-.theme-options button,.onboard-actions button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  line-height:1.2;
-}
-.catalog-item button,.timeline-content button,.onboard-custom-item button{min-height:44px}
-.subject-quick-actions button{min-height:44px}
-.settings-card>button{min-height:48px}
-.primary,.secondary,.sim-btn{min-height:48px}
-.history-actions button{min-height:44px}
-.history-actions .history-more{display:grid;place-items:center}
-
-/* Intentionally editorial / left aligned controls */
-.quick,.pending-row,.history-launch,.risk-strip,.subject-progress-card,
-.freq-link,.subject-title-link,.room-node,.date-button,.reason,.micro{
-  text-align:left;
-}
-.reason,.micro{align-items:center}
-.reason-icon,.micro-icon{align-self:center}
-
-/* Inline content icon slots */
+/* Content emojis are allowed only as content and get predictable slots */
 .event-emoji,.button-emoji{
   flex:0 0 auto;
   display:inline-grid;
@@ -728,39 +354,331 @@ html[data-theme="dark"] .activity-icon{
   vertical-align:middle;
   line-height:1;
   margin:0;
+  font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif;
 }
 .event-emoji{width:18px;height:18px;min-width:18px}
-.button-emoji{width:18px;height:18px;min-width:18px}
-.tag .event-emoji{width:18px;height:18px}
-.event-card h3,.special-day strong,.tag,.subject-quick-actions button{align-items:center}
+.button-emoji{width:18px;height:18px;min-width:18px;font-size:14px}
+.activity-icon .event-emoji{width:22px;height:22px;font-size:18px}
+.tag .event-emoji{width:18px;height:18px;font-size:13px}
+.subject-upcoming-row .event-emoji{width:20px;height:20px;font-size:16px}
 
-/* Icon-only controls */
-.iconbtn,.close,.activity-done,.fab{
+/* Home and attendance actions */
+.qicon{
+  width:40px;
+  height:40px;
   display:grid;
   place-items:center;
-  padding:0;
-  line-height:0!important;
+  border-radius:10px;
 }
-.iconbtn,.close,.activity-done{
-  width:44px;
-  height:44px;
-  min-width:44px;
-  min-height:44px;
+.qicon svg{width:20px;height:20px;margin:0}
+.attendance-actions{align-items:stretch}
+.big-action{
+  min-height:64px;
+  border-radius:var(--ds-radius-md);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:5px;
+  line-height:1.1;
 }
-.iconbtn svg,.close svg{width:20px;height:20px}
-.activity-done svg{width:18px;height:18px}
-.back-btn{
-  height:44px;
-  min-height:44px;
+.big-action>b{
+  width:22px;
+  height:22px;
+  display:grid;
+  place-items:center;
+  line-height:0;
+}
+.big-action .action-icon{width:19px;height:19px}
+.big-action.present{color:var(--green);background:color-mix(in srgb,var(--green) 12%,var(--surface2))}
+.big-action.partial{color:var(--lavender);background:color-mix(in srgb,var(--lavender) 12%,var(--surface2))}
+.big-action.absent{color:var(--coral);background:color-mix(in srgb,var(--coral) 12%,var(--surface2))}
+.micro-actions{align-items:stretch}
+.micro{
+  min-height:var(--ds-touch);
+  border-radius:var(--ds-radius-md);
+  justify-content:flex-start;
+  gap:8px;
+}
+.micro-icon{width:18px;height:18px;min-width:18px;margin:0}
+.ead-action{
+  color:var(--pool);
+  border-color:color-mix(in srgb,var(--pool) 45%,var(--line));
+  background:color-mix(in srgb,var(--pool) 9%,var(--surface2));
+}
+
+/* Activity rows */
+.activity-card{border-radius:var(--ds-radius-lg)}
+.activity-done{border-radius:var(--ds-radius-md)}
+.activity-title-row{align-items:center}
+
+/* Gate 4 — card-action / history launch */
+.history-launch{
+  width:100%;
+  min-height:72px;
+  padding:10px 12px;
+  display:grid;
+  grid-template-columns:40px minmax(0,1fr) 20px;
+  gap:10px;
+  align-items:center;
+  text-align:left;
+  border-radius:var(--ds-radius-lg);
+}
+.history-launch-icon{
+  width:40px;
+  height:40px;
+  padding:10px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:color-mix(in srgb,var(--pool) 13%,var(--surface2));
+  color:var(--pool);
+  line-height:0;
+}
+.history-launch-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:var(--ds-icon-stroke);stroke-linecap:round;stroke-linejoin:round}
+.history-launch b{display:block;font-size:13px;line-height:1.25}
+.history-launch small{display:block;font-size:11px;line-height:1.4;color:var(--muted);margin-top:3px}
+.history-launch-arrow,.risk-chevron,.subject-chevron{
+  width:20px;
+  height:20px;
+  display:grid;
+  place-items:center;
+  line-height:0;
+}
+.history-launch-arrow svg,.risk-chevron svg,.subject-chevron svg{width:16px;height:16px}
+
+/* History explorer */
+.history-controls{
+  border-radius:var(--ds-radius-lg);
+}
+.history-controls .field label{font-size:11px}
+.history-search-wrap input,
+.history-controls select,
+.history-controls input[type="date"]{
+  min-height:var(--ds-control);
+  border-radius:var(--ds-radius-md);
+}
+.history-core-grid{gap:8px}
+.history-advanced-toggle{
+  min-height:var(--ds-touch);
+  border-radius:var(--ds-radius-md);
+  align-items:center;
+}
+.history-chip{
+  min-height:32px;
+  border-radius:999px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:6px;
-  line-height:1;
+  line-height:1.1;
 }
-.back-btn svg{width:18px;height:18px}
+.history-chip b{
+  width:16px;
+  height:16px;
+  min-width:16px;
+  display:grid;
+  place-items:center;
+  line-height:0;
+}
+.history-chip svg{width:13px;height:13px}
+.history-actions{align-items:stretch}
+.history-actions button{
+  min-height:var(--ds-touch);
+  border-radius:var(--ds-radius-md);
+  align-self:stretch;
+}
+.history-quick{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+.history-quick-icon{width:16px;height:16px}
+.history-more{
+  display:grid!important;
+  place-items:center!important;
+  padding:0!important;
+  line-height:0!important;
+}
+.history-more svg{width:20px;height:20px}
+.history-status,
+.history-summary-card span,
+.history-results-head span,
+.history-commitments,
+.history-reason{
+  font-size:11px;
+  line-height:1.35;
+}
 
-/* Bottom navigation */
+/* Subject page */
+.subject-quick-actions{
+  align-items:stretch;
+}
+.subject-quick-actions button{
+  min-height:var(--ds-touch);
+  padding:0 12px;
+  gap:6px;
+  line-height:1.2;
+}
+.button-icon{width:17px;height:17px}
+.subject-metrics{gap:8px}
+.metric-card{border-radius:var(--ds-radius-lg)}
+
+/* Settings */
+.settings-card{border-radius:var(--ds-radius-lg)}
+.theme-options{
+  align-items:stretch;
+  gap:6px;
+}
+.theme-options button{
+  width:100%;
+  min-height:var(--ds-touch);
+}
+.theme-options button.active{
+  background:color-mix(in srgb,var(--lavender) 13%,var(--surface));
+  border-color:color-mix(in srgb,var(--lavender) 55%,var(--line));
+  color:var(--text);
+}
+.settings-list small{font-size:11px;line-height:1.35}
+
+/* Forms */
+.field input:not([type="checkbox"]):not([type="file"]),
+.field select,
+.field textarea,
+.settings-number{
+  border-radius:var(--ds-radius-md);
+}
+.field input:not([type="checkbox"]):not([type="file"]),
+.field select,
+.settings-number{
+  min-height:var(--ds-control);
+}
+.field label{font-size:11px}
+.field textarea{min-height:96px}
+
+/* Onboarding selection states */
+.year-input-wrap{position:relative}
+.year-input-wrap input{
+  padding-right:48px!important;
+  border:1px solid var(--line-strong)!important;
+  background:var(--field)!important;
+}
+.year-input-wrap input:focus{
+  border-color:var(--cobalt)!important;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--cobalt) 18%,transparent)!important;
+}
+.year-input-wrap .selected-check{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  width:24px;
+  height:24px;
+  padding:5px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--yellow);
+  color:#17384D;
+  line-height:0;
+}
+.selected-check svg{width:14px;height:14px}
+.selection-hint{
+  display:block;
+  margin-top:6px;
+  color:var(--cobalt);
+  font-size:11px;
+  font-weight:720;
+}
+.term,.semopt{
+  min-height:var(--ds-touch);
+  border-radius:var(--ds-radius-md);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  line-height:1.1;
+}
+.term.selected,.semopt.selected{
+  background:var(--cobalt)!important;
+  border-color:color-mix(in srgb,var(--cobalt) 74%,white)!important;
+  color:#fff!important;
+  font-weight:800;
+}
+.term.selected::after,.semopt.selected::after{
+  content:"";
+  position:absolute;
+  right:7px;
+  top:7px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  display:block;
+  background:var(--yellow);
+}
+.term.selected::before,.semopt.selected::before{
+  content:"";
+  position:absolute;
+  right:12px;
+  top:11px;
+  width:5px;
+  height:8px;
+  border-right:2px solid #17384D;
+  border-bottom:2px solid #17384D;
+  transform:rotate(45deg);
+  z-index:2;
+}
+
+/* Overlays / sheets */
+.sheet{
+  border-radius:var(--ds-radius-sheet) var(--ds-radius-sheet) 0 0;
+}
+.sheet-head{align-items:flex-start}
+.option-grid{gap:8px}
+.option{
+  min-height:64px;
+  border-radius:var(--ds-radius-md);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  text-align:center;
+  line-height:1.15;
+}
+.option>b{
+  width:24px;
+  height:24px;
+  min-width:24px;
+  display:grid;
+  place-items:center;
+  line-height:0;
+  margin:0;
+}
+.option-icon{
+  width:20px;
+  height:20px;
+  margin:0;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:var(--ds-icon-stroke);
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.reason{
+  min-height:var(--ds-touch);
+  border-radius:var(--ds-radius-md);
+  justify-content:flex-start;
+  gap:8px;
+}
+.reason-icon{width:18px;height:18px;min-width:18px;margin:0}
+
+/* Bottom navigation keeps existing product structure: 4 destinations + central add */
+.bottomnav{
+  align-items:end;
+}
 .navbtn{
   min-height:52px;
   display:grid;
@@ -779,38 +697,48 @@ html[data-theme="dark"] .activity-icon{
   place-items:center;
 }
 .navbtn svg{width:19px;height:19px;margin:0}
+.navbtn.active{color:var(--lavender)}
+.fab{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+}
+.fab svg{width:24px;height:24px}
 
-/* Consistent type rhythm */
-.calendar-legend,.mode-toggle,.navbtn,.history-actions,.subject-quick-actions{
-  font-variant-numeric:tabular-nums;
-}
-button span{min-width:0}
-
-/* Dark optical balance */
-html[data-theme="dark"] .calendar-legend .legend-chip{
-  background:color-mix(in srgb,var(--surface2) 94%,var(--lavender) 6%);
-}
-html[data-theme="dark"] .calendar-legend .legend-icon{
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.015);
-}
-html[data-theme="dark"] .month-main>.event-emoji{
-  background:color-mix(in srgb,var(--surface2) 92%,var(--lavender) 8%);
+/* Functional type floor */
+.freq-mini span,
+.course-progress-line,
+.next-act,
+.file-status small,
+.program-stats span{
+  font-size:11px;
+  line-height:1.35;
 }
 
-/* Small iPhone */
+/* Dark-mode subject identity: preserve stored colors, soften only presentation */
+html[data-theme="dark"] .subject-mark,
+html[data-theme="dark"] .subject-mini{
+  background:color-mix(in srgb,var(--subject) 78%,var(--surface3) 22%);
+}
+html[data-theme="dark"] .next-class-card,
+html[data-theme="dark"] .today-card{
+  border-left-color:color-mix(in srgb,var(--subject) 78%,var(--lavender) 22%);
+}
+html[data-theme="dark"] .course-progress i{
+  background:color-mix(in srgb,var(--subject) 80%,var(--lavender) 20%);
+}
+
+/* Small iPhones */
+@media(max-width:390px){
+  .section-title{align-items:center}
+  .subject-quick-actions button{min-height:var(--ds-touch)}
+}
 @media(max-width:350px){
-  .calendar-legend .legend-chip{
-    height:34px;
-    min-height:34px;
-    padding-right:8px;
-  }
-  .calendar-legend .legend-icon{
-    width:20px;
-    height:20px;
-    min-width:20px;
-    padding:3px;
-  }
+  .calendar-legend .legend-chip{height:34px;min-height:34px;padding-right:8px}
+  .calendar-legend .legend-icon{width:20px;height:20px;min-width:20px;padding:3px}
   .calendar-legend .legend-icon svg{width:13px;height:13px}
+  .onboard-actions{display:grid;grid-template-columns:auto minmax(0,1fr)}
+  .onboard-actions button{width:100%}
 }
 </style>
 </head>
