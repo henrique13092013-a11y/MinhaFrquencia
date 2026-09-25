@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="MinhaFrequência"/>
 <link rel="manifest" href="manifest.webmanifest?v=1.8"/>
 <link rel="apple-touch-icon" href="icon.svg?v=1.8"/>
-<title>MinhaFrequência — v1.8 PWA</title>
+<title>MinhaFrequência — v1.8.1 PWA</title>
 <script data-mf-theme-boot>(function(){try{const raw=localStorage.getItem('minhafrequencia_v03');const st=raw?JSON.parse(raw):{};const mode=st.ui?.theme||'auto';const actual=mode==='auto'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):mode;document.documentElement.dataset.theme=actual;}catch(e){document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}})();</script>
 <style>
 :root{--font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Segoe UI",Inter,Arial,sans-serif;--r-xs:8px;--r-sm:10px;--r-md:14px;--r-lg:20px;--touch:46px;--ease:cubic-bezier(.2,.8,.2,1)}
@@ -1080,6 +1080,6 @@ function importData(file){if(!file)return;const r=new FileReader();r.onload=()=>
 function resetAll(){if(confirm('Apagar toda a configuração, registros, assuntos e eventos deste aparelho?')){localStorage.removeItem('minhafrequencia_v03');location.reload()}}
 function toast(msg,actionLabel='',actionFn=null){const t=document.getElementById('toast');clearTimeout(t._timer);undoAction=typeof actionFn==='function'?actionFn:null;t.innerHTML='';const span=document.createElement('span');span.textContent=msg;t.appendChild(span);if(actionLabel&&undoAction){const b=document.createElement('button');b.className='undo-btn';b.textContent=actionLabel;b.onclick=()=>{const fn=undoAction;undoAction=null;t.classList.remove('show');if(fn)fn()};t.appendChild(b)}t.classList.add('show');softHaptic();t._timer=setTimeout(()=>{undoAction=null;t.classList.remove('show')},4200)}
 function escapeHtml(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
-if('serviceWorker'in navigator&&location.protocol!=='file:'){navigator.serviceWorker.register('sw.js?v=1.8',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{})}if(window.matchMedia){const mq=window.matchMedia('(prefers-color-scheme: dark)');mq.addEventListener?.('change',()=>{if((state.ui?.theme||'auto')==='auto')applyTheme('auto')})}load();
+if('serviceWorker'in navigator&&location.protocol!=='file:'){navigator.serviceWorker.register('sw.js?v=1.8.1',{updateViaCache:'none'}).then(r=>r.update()).catch(()=>{})}if(window.matchMedia){const mq=window.matchMedia('(prefers-color-scheme: dark)');mq.addEventListener?.('change',()=>{if((state.ui?.theme||'auto')==='auto')applyTheme('auto')})}load();
 </script>
 </body></html>
